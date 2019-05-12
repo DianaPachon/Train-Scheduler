@@ -1,0 +1,50 @@
+h3{
+    margin-top: -1%;
+  background: white;
+  padding: .5%;
+
+
+  margin-left: 15px;
+  margin-right: 15px;
+  text-align: center;
+  color: rgb(21, 74, 110);
+  box-shadow: 30% black;
+  font-family: 'Old Standard TT', serif;
+  font-style: italic;
+
+
+}
+.container{
+    font-family: 'Old Standard TT', serif;
+
+}
+.card{
+    padding: 3%;
+    background: rgb(216, 216, 94);
+    padding-bottom:  2%;
+
+}
+
+#schedule{
+    font-family: 'Old Standard TT', serif;
+}
+
+#info{
+    font-family: 'Old Standard TT', serif;
+    color: rgb(21, 74, 110);
+    background: rgb(119, 216, 233);
+}
+
+#alert{
+    font-family: 'Old Standard TT', serif;
+    color: rgb(21, 74, 110);
+    background: rgb(119, 216, 233);
+    margin-top: 3%;
+}
+
+#submit{
+    font-family: 'Old Standard TT', serif;
+    color: rgb(21, 74, 110);
+    background: rgb(119, 216, 233);
+
+}
