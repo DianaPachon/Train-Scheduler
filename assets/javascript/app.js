@@ -3,25 +3,25 @@ $(document).ready(function(){
     // Initialize Firebase
  // Your web app's Firebase configuration
  var firebaseConfig = {
-    apiKey: "AIzaSyBfI7BSugxEQwqYFMXF1YQIUPdrJbxSzSg",
-    authDomain: "train-63eb7.firebaseapp.com",
-    databaseURL: "https://train-63eb7.firebaseio.com",
-    projectId: "train-63eb7",
-    storageBucket: "train-63eb7.appspot.com",
-    messagingSenderId: "1093890020944",
-    appId: "1:1093890020944:web:80c0613a02bdc2da"
-  };
+  apiKey: "AIzaSyBVckOwhX90IBwV2ssMd-ttu2SbX6fLrpM",
+  authDomain: "train-schedule-f4417.firebaseapp.com",
+  databaseURL: "https://train-schedule-f4417.firebaseio.com",
+  projectId: "train-schedule-f4417",
+  storageBucket: "train-schedule-f4417.appspot.com",
+  messagingSenderId: "711459617681",
+  appId: "1:711459617681:web:fe7a616aecf5003c"
+};
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
   
     // Create a variable to reference the database.
-    var database = firebase.database();
+    // var database = firebase.database();
+
     
-    //When user clicks on submit button, after filling the forms
-    $("#submit").on("click", function(event){
+
+    $("#submit").on("click", function(){
       
-      //Prevent form from submitting
-      event.preventDefault();
+  
   
       //Capture user input for each field
       var trainName = $("#train-name").val().trim();
@@ -47,7 +47,7 @@ $(document).ready(function(){
       console.log(newTrain.frequency);
   
   
-      //Clear all the text boxes
+      // Clear all the text boxes
       $("#train-name").val("");
       $("#destination").val("");
       $("#first-train").val("");
@@ -56,14 +56,14 @@ $(document).ready(function(){
     });
   
     //Create Firebase event for adding a train to the database and a row in the html when a user adds an entry
-    database.ref().on("child_added", function(childSnapshot) {
-      console.log(childSnapshot.val());
+    database.ref().on("child_added", function(rowAdded) {
+      console.log(rowAdded.val());
   
       // Store everything into a variable.
-      var trainName = childSnapshot.val().name;
-      var destination = childSnapshot.val().destination;
-      var frequency = childSnapshot.val().frequency;
-      var firstTime = childSnapshot.val().firstTrain;
+      var trainName = rowAdded.val().name;
+      var destination = rowAdded.val().destination;
+      var frequency = rowAdded.val().frequency;
+      var firstTime = rowAdded.val().firstTrain;
   
       //Move the time entered one year back so we make sure the current time is after
       var firstTimeConverted = moment(firstTime, "HH:mm").subtract(1, "years");
